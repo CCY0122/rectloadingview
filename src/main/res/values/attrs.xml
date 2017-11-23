@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RectLoadingView">
+        <attr name="minRectHeight" format="dimension"/>
+        <attr name="maxRectHeight" format="dimension"/>
+        <attr name="duartion" format="integer"/>
+        <attr name="count" format="integer"/>
+        <attr name="color" format="color"/>
+        <attr name="round_mode" format="boolean"/>
+    </declare-styleable>
+</resources>
