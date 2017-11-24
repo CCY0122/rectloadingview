@@ -16,10 +16,9 @@ public interface IAnimController {
      * 在绘制时会将矩形原始高度乘上该比例值作为最终高度
      * 考虑到该方法可能多次调用，建议调用之前先调用stopAnim()
      *
-     * @param duration  一次完整的动画时长的建议值
-     * @param view      RectLoadingView,主要为了根据动画给{@link RectLoadingView#fractions}赋值然后{@link RectLoadingView#invalidate()}来实现动画效果
+     * @param view      RectLoadingView
      */
-    void createAnim(long duration, RectLoadingView view);
+    void createAnim(RectLoadingView view);
 
     /**
      * 开启动画，注意判空

@@ -33,10 +33,10 @@ public class DefaultAnimController implements IAnimController {
     private boolean needCancel;
 
     @Override
-    public void createAnim(long duration, final RectLoadingView view) {
+    public void createAnim(final RectLoadingView view) {
         this.view = view;
         fractions = view.getFractions();
-        initDurations(duration, fractions.length);
+        initDurations(view.getDuration(), fractions.length);
         upAnims = new ValueAnimator[fractions.length];
         downAnims = new ValueAnimator[fractions.length];
         for (int i = 0; i < fractions.length; i++) {

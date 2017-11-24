@@ -19,7 +19,7 @@ public class RandomAnimController implements IAnimController {
     }
 
     @Override
-    public void createAnim(long duration, final RectLoadingView view) {
+    public void createAnim(final RectLoadingView view) {
         animators = new ValueAnimator[view.getFractions().length];
         for (int i = 0; i < animators.length; i++) {
             float min = (float) (0.1 + 0.2 * Math.random());
@@ -27,7 +27,7 @@ public class RandomAnimController implements IAnimController {
             animators[i] = ValueAnimator.ofFloat(min, max);
             animators[i].setRepeatCount(ValueAnimator.INFINITE);
             animators[i].setRepeatMode(ValueAnimator.REVERSE);
-            animators[i].setDuration((long) (duration * (0.7 + 0.6 * Math.random())));  //时长±0.3随机
+            animators[i].setDuration((long) (view.getDuration() * (0.7 + 0.6 * Math.random())));  //时长±0.3随机
             animators[i].setInterpolator(new LinearInterpolator());
             final int finalI = i;
             animators[i].addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {

@@ -157,7 +157,7 @@ public class RectLoadingView extends View {
             originrRects[i] = new RectF(left, top, right, bottom);
         }
         animController.stopAnim();
-        animController.createAnim(duration, this);
+        animController.createAnim(this);
     }
 
     /**

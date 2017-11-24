@@ -66,17 +66,17 @@ public class WaveAnimController implements IAnimController {
 
 
     @Override
-    public void createAnim(long duration, final RectLoadingView view) {
+    public void createAnim(final RectLoadingView view) {
         this.view = view;
         if (halfWaveCount < 0) {
-            delay = duration / (view.getFractions().length - 1);   //默认一次波浪占全部矩形
+            delay = view.getDuration() / (view.getFractions().length - 1);   //默认一次波浪占全部矩形
         } else {
-            delay = duration / halfWaveCount;
+            delay = view.getDuration() / halfWaveCount;
         }
         animators = new ValueAnimator[view.getFractions().length];
         for (int i = 0; i < animators.length; i++) {
             animators[i] = ValueAnimator.ofFloat(minFraction, maxFraction);
-            animators[i].setDuration(duration);
+            animators[i].setDuration(view.getDuration());
             animators[i].setRepeatCount(singleWave ? 1 : ValueAnimator.INFINITE);
             animators[i].setRepeatMode(ValueAnimator.REVERSE);
             animators[i].setInterpolator(new LinearInterpolator());
